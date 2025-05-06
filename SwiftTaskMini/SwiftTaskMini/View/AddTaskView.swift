@@ -1,0 +1,31 @@
+//
+//  AddTaskView.swift
+//  SwiftTaskMini
+//
+//  Created by r0k06op on 5/5/25.
+//
+
+import SwiftUI
+
+struct AddTaskView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var taskTitle: String = ""
+    @ObservedObject var viewModel: TaskViewModel
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                TextField("Task Title", text: $taskTitle)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            .navigationTitle("Add New Task")
+            .navigationBarItems(trailing: Button("Save") {
+                if !taskTitle.isEmpty {
+                    viewModel.addTask(title: taskTitle)
+                    presentationMode.wrappedValue.dismiss()
+                }
+            })
+        }
+    }
+}
+
