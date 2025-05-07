@@ -9,13 +9,6 @@ import Foundation
 
 class TaskViewModel: ObservableObject {
     @Published var tasks: [Task] = []
-//    init() {
-//        tasks = [
-//            Task(title: "Test task 1"),
-//            Task(title: "Test task 2")
-//        ]
-//    }
-
     func addTask(title: String) {
         let newTask = Task(title: title)
         tasks.append(newTask)
@@ -28,6 +21,12 @@ class TaskViewModel: ObservableObject {
     func toggleCompletion(for task: Task) {
         if let index = tasks.firstIndex(where: { $0.id == task.id }) {
             tasks[index].isCompleted.toggle()
+        }
+    }
+
+    func updateTask(_ task: Task) {
+        if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+            tasks[index] = task
         }
     }
 }
