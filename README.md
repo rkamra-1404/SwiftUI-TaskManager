@@ -4,10 +4,15 @@ A minimal and elegant Task Manager app built using SwiftUI.
 Track your tasks, mark them as complete, and enjoy a clean UI with shadows and rounded corners.
 
 ## 🚀 Features
-- Add, delete, and toggle task completion
-- Modern SwiftUI UI with system icons
-- Minimal design with soft background and shadows
-- Responsive layout and basic UX animations
+- ✅ Add, delete, and toggle task completion
+- 📝 Full task detail editing (title, description, due date, tags, priority)
+- 📆 Due date selection with calendar
+- 🏷️ Tag tasks with keywords (e.g., Work, Personal)
+- 🔺 Prioritize tasks (Low, Medium, High)
+- 🌗 Clean, modern UI with dark mode support
+- 🧠 Built with SwiftUI + MVVM architecture
+- 📱 Responsive and lightweight interface
+
 
 ## 🛠 Technologies Used
 - SwiftUI
