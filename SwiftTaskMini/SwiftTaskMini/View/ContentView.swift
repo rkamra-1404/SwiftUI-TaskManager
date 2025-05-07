@@ -15,9 +15,11 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(viewModel.tasks) { task in
-                    TaskRow(task: task, toggleCompletion: {
-                        viewModel.toggleCompletion(for: task)
-                    })
+                     NavigationLink(destination: TaskDetailView(viewModel: viewModel, task: task)) {
+                        TaskRow(task: task, toggleCompletion: {
+                            viewModel.toggleCompletion(for: task)
+                        })
+                    }
                     .listRowBackground(Color.white)
                     .padding(.vertical, 5)
                 }
